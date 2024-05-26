@@ -195,116 +195,151 @@
 
 			<div class="container">
 				<div class="content">
-					<div id="product">
-						<div class="details">
-							<div class="thumbnails">
-								<img src="tmp-img/fashion-1623084_640.jpg" alt="..." />
-								<img src="tmp-img/fashion-1623084_640.jpg" alt="..." />
-								<img src="tmp-img/fashion-1623084_640.jpg" alt="..." />
-								<img src="tmp-img/fashion-1623084_640.jpg" alt="..." />
+					<div id="product-container">
+						<div id="product">
+							<div class="details">
+								<div class="thumbnails">
+									<img src="tmp-img/fashion-1623084_640.jpg" alt="..." />
+									<img
+										src="tmp-img/fashion-1623084_640.jpg"
+										alt="..."
+										class="active"
+									/>
+									<img src="tmp-img/fashion-1623084_640.jpg" alt="..." />
+									<img src="tmp-img/fashion-1623084_640.jpg" alt="..." />
+								</div>
+								<img
+									src="tmp-img/fashion-1623084_640.jpg"
+									alt="..."
+									class="main-image"
+								/>
 							</div>
-							<img src="tmp-img/fashion-1623084_640.jpg" alt="..." />
-						</div>
-						<div class="info">
-							<h1>Product name</h1>
-							<p>
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-								laborum iure maiores commodi dolorem laboriosam ipsam neque,
-								saepe minima quod, obcaecati, explicabo dolor numquam ratione
-								quae quasi! Quasi, vitae amet.
-							</p>
-							<form action="#">
-								<div class="input-field">
-									<label>Size:</label>
-
-									<div class="option-field">
-										<label
-											>PP<input type="radio" name="size" value="PP" />
-										</label>
-									</div>
-									<div class="option-field">
-										<label
-											>P<input type="radio" name="size" value="P" />
-										</label>
-									</div>
-									<div class="option-field">
-										<label
-											>M<input type="radio" name="size" value="M" />
-										</label>
-									</div>
-									<div class="option-field">
-										<label
-											>G<input type="radio" name="size" value="G" />
-										</label>
-									</div>
-									<div class="option-field">
-										<label
-											>GG<input type="radio" name="size" value="GG" />
-										</label>
-									</div>
-								</div>
-
-								<div class="input-field">
-									<label>Color:</label>
-
-									<div class="option-field">
-										<label
-											><span class="color"></span
-											><input type="radio" name="color" value="red" />
-										</label>
-									</div>
-									<div class="option-field">
-										<label
-											><span class="color"></span
-											><input type="radio" name="color" value="red" />
-										</label>
-									</div>
-									<div class="option-field">
-										<label
-											><span class="color"></span
-											><input type="radio" name="color" value="red" />
-										</label>
-									</div>
-									<div class="option-field">
-										<label
-											><span class="color"></span
-											><input type="radio" name="color" value="red" />
-										</label>
-									</div>
-									<div class="option-field">
-										<label
-											><span class="color"></span
-											><input type="radio" name="color" value="red" />
-										</label>
-									</div>
-								</div>
-
-								<div class="input-field">
+							<div class="info">
+								<h1>Product name</h1>
+								<p>
+									Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+									Libero laborum iure maiores commodi dolorem laboriosam ipsam
+									neque, saepe minima quod, obcaecati, explicabo dolor numquam
+									ratione quae quasi! Quasi, vitae amet.
+								</p>
+								<form action="#">
 									<div class="input-field">
-										<label>Quantity:</label>
-										<div class="quantity">
-											<button type="button">-</button>
-											<input
-												type="number"
-												name="quantity"
-												min="1"
-												value="1"
-												required
-											/>
-											<button type="button">+</button>
+										<label>Size:</label>
+
+										<div class="options">
+											<div class="option-field">
+												<label
+													>PP<input
+														type="radio"
+														name="size"
+														value="PP"
+														checked
+													/>
+												</label>
+											</div>
+											<div class="option-field">
+												<label
+													>P<input type="radio" name="size" value="P" />
+												</label>
+											</div>
+											<div class="option-field">
+												<label
+													>M<input type="radio" name="size" value="M" />
+												</label>
+											</div>
+											<div class="option-field">
+												<label
+													>G<input type="radio" name="size" value="G" />
+												</label>
+											</div>
+											<div class="option-field">
+												<label
+													>GG<input type="radio" name="size" value="GG" />
+												</label>
+											</div>
 										</div>
 									</div>
-								</div>
 
-								<div class="input-field">
-									<a href="#" class="btn-success">Buy now</a>
-									<button type="submit" class="btn">Add to cart</button>
-								</div>
-							</form>
+									<div class="input-field">
+										<label>Color:</label>
+
+										<div class="options">
+											<div class="option-field">
+												<label
+													><span
+														class="color"
+														style="background-color: gray"
+													></span
+													><input
+														type="radio"
+														name="color"
+														value="red"
+														checked
+													/>
+												</label>
+											</div>
+											<div class="option-field">
+												<label
+													><span
+														class="color"
+														style="background-color: black"
+													></span
+													><input type="radio" name="color" value="black" />
+												</label>
+											</div>
+											<div class="option-field">
+												<label
+													><span
+														class="color"
+														style="background-color: yellow"
+													></span
+													><input type="radio" name="color" value="yellow" />
+												</label>
+											</div>
+											<div class="option-field">
+												<label
+													><span
+														class="color"
+														style="background-color: green"
+													></span
+													><input type="radio" name="color" value="green" />
+												</label>
+											</div>
+											<div class="option-field">
+												<label
+													><span
+														class="color"
+														style="background-color: pink"
+													></span
+													><input type="radio" name="color" value="pink" />
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="input-field">
+										<div class="input-field">
+											<label>Quantity:</label>
+											<div class="quantity">
+												<input
+													type="number"
+													name="quantity"
+													min="1"
+													value="1"
+													required
+												/>
+											</div>
+										</div>
+									</div>
+
+									<div class="input-field action">
+										<a href="#" class="btn-success">Buy now</a>
+										<button type="submit" class="btn">Add to cart</button>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
-
-					<div id="additional"></div>
 				</div>
 			</div>
 

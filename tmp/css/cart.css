@@ -21,7 +21,7 @@
 	width: 0;
 	max-width: 100vw;
 	opacity: 0;
-	transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease;
 }
 
 #cart-content .cart-header {

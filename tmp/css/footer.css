@@ -80,3 +80,24 @@ footer {
 #bottom-footer span {
 	font-weight: 500;
 }
+
+/* Media Queries */
+
+@media screen and (max-width: 880px) {
+	#footer-content {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	#footer-content form button {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	#footer-content #social-media ul {
+		width: 100%;
+		justify-content: space-around;
+	}
+}

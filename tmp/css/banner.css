@@ -49,3 +49,19 @@
 	font-weight: 300;
 	margin-bottom: 3rem;
 }
+
+/* Media Queries */
+
+@media screen and (max-width: 576px) {
+	#banner .info {
+		text-align: center;
+	}
+
+	#banner .info h1 {
+		font-size: 3rem;
+	}
+
+	#banner .info a {
+		width: 100%;
+	}
+}
