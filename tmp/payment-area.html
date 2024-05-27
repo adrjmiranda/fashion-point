@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<title>Fashion Point</title>
+
+		<!-- Styles -->
+
+		<link rel="stylesheet" href="css/master.css" />
+
+		<!-- Scripts -->
+
+		<script src="js/cart-visibility.js" defer></script>
+		<script src="js/mobile-menu-visibility.js" defer></script>
+
+		<!-- Fonts -->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="main">
+			<!-- Navbar -->
+
+			<nav id="nav">
+				<div class="container">
+					<div id="navbar">
+						<a href="#" class="logo">
+							<img src="img/logo.png" alt="Logo" /><span>Fashion point</span>
+						</a>
+
+						<!-- Menu -->
+
+						<div class="nav-menu">
+							<ul>
+								<li><a href="#" class="special-link">Home</a></li>
+								<li><a href="#" class="special-link">Offers</a></li>
+								<li><a href="#" class="special-link">About</a></li>
+								<li><a href="#" class="special-link">Blog</a></li>
+							</ul>
+						</div>
+
+						<div class="search">
+							<form action="#">
+								<input type="search" placeholder="What are you looking for?" />
+								<button type="submit">
+									<img src="img/search.svg" alt="search" />
+								</button>
+							</form>
+						</div>
+
+						<div class="status">
+							<ul>
+								<li>
+									<a href="#"
+										><img src="img/heart-outline.svg" alt="favorites"
+									/></a>
+								</li>
+								<li>
+									<a href="#"
+										><img src="img/person-outline.svg" alt="profile"
+									/></a>
+								</li>
+								<li>
+									<button type="button" id="cart-show">
+										<span class="notify">1</span>
+										<img src="img/bag-outline.svg" alt="cart" />
+									</button>
+								</li>
+							</ul>
+						</div>
+
+						<!-- Toggle Menu -->
+
+						<div id="toggle-menu">
+							<span class="notify"></span>
+							<button type="button">
+								<img src="img/menu.svg" alt="toggle menu" />
+							</button>
+						</div>
+
+						<!-- Mobile Menu -->
+
+						<div id="mobile-menu">
+							<div class="search mobile-menu">
+								<form action="#">
+									<input
+										type="search"
+										placeholder="What are you looking for?"
+									/>
+									<button type="submit">
+										<img src="img/search.svg" alt="search" />
+									</button>
+								</form>
+							</div>
+
+							<div class="nav-menu mobile-menu">
+								<ul>
+									<li><a href="#" class="special-link">Home</a></li>
+									<li><a href="#" class="special-link">Offers</a></li>
+									<li><a href="#" class="special-link">About</a></li>
+									<li><a href="#" class="special-link">Blog</a></li>
+								</ul>
+							</div>
+
+							<div class="status mobile-menu">
+								<ul>
+									<li>
+										<a href="#"
+											><img src="img/heart-outline.svg" alt="favorites"
+										/></a>
+									</li>
+									<li>
+										<a href="#"
+											><img src="img/person-outline.svg" alt="profile"
+										/></a>
+									</li>
+									<li>
+										<button type="button" id="cart-show-mobile">
+											<span class="notify">1</span>
+											<img src="img/bag-outline.svg" alt="cart" />
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+			<!-- Cart -->
+
+			<div id="cart">
+				<div id="cart-content">
+					<div class="cart-header">
+						<div class="header">
+							<h4>Your cart</h4>
+							<button type="button" id="cart-close">
+								<img src="img/close.svg" alt="close" />
+							</button>
+						</div>
+						<hr />
+					</div>
+
+					<div id="cart-list">
+						<div class="cart-item">
+							<img src="tmp-img/fashion-1623084_640.jpg" alt="..." />
+							<div class="item">
+								<div class="info">
+									<h4>Product name</h4>
+									<a href="#" class="remove-product">
+										<img src="img/trash.svg" alt="remove product" />
+									</a>
+								</div>
+								<div class="bottom-cart-item">
+									<p class="price">
+										<span>$</span>
+										<span>199.90</span>
+									</p>
+									<div class="quantity-item">
+										<button type="button" class="remove-item">-</button>
+										<span class="quantity">1</span>
+										<button type="button" class="add-item">+</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="bottom-cart">
+						<div id="cart-total">
+							<p>
+								<span>Total:</span>
+								<span>
+									<span>$</span>
+									<span>290.98</span>
+								</span>
+							</p>
+						</div>
+						<div class="actions">
+							<a href="#" class="btn">Payment area</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Content -->
+
+			<div class="container">
+				<div class="content">
+					<div id="payment-container">
+						<div id="payment">
+							<div class="data">
+								<h2>Your data</h2>
+								<form action="#">
+									<div class="group">
+										<div class="field">
+											<label>First name</label>
+											<input
+												type="text"
+												name="first_name"
+												placeholder="Your first name"
+											/>
+										</div>
+										<div class="field">
+											<label>Last name</label>
+											<input
+												type="text"
+												name="last_name"
+												placeholder="Your last name"
+											/>
+										</div>
+									</div>
+
+									<div class="group">
+										<div class="field">
+											<label>Street</label>
+											<input
+												type="text"
+												name="street"
+												placeholder="Your street"
+											/>
+										</div>
+										<div class="field">
+											<label>Number</label>
+											<input
+												type="text"
+												name="number"
+												placeholder="House number"
+											/>
+										</div>
+									</div>
+
+									<div class="group">
+										<div class="field">
+											<label>Neighborhood</label>
+											<input
+												type="text"
+												name="neighborhood"
+												placeholder="Your neighborhood"
+											/>
+										</div>
+										<div class="field">
+											<label>City</label>
+											<input type="text" name="city" placeholder="Your city" />
+										</div>
+									</div>
+
+									<div class="group">
+										<div class="field">
+											<label>State</label>
+											<input
+												type="text"
+												name="state"
+												placeholder="Your state"
+											/>
+										</div>
+										<div class="field">
+											<label>Country</label>
+											<input
+												type="text"
+												name="country"
+												placeholder="Your country"
+											/>
+										</div>
+									</div>
+
+									<button type="submit" class="btn">Confirm</button>
+								</form>
+
+								<div class="payment-type">
+									<h3>Payment methods</h3>
+									<div class="list">
+										<div class="type active">
+											<img src="img/card.svg" alt="card" />
+											<h5>Card</h5>
+										</div>
+										<div class="type">
+											<img src="img/qr-code.svg" alt="pix" />
+											<h5>Pix</h5>
+										</div>
+										<div class="type">
+											<img src="img/barcode.svg" alt="card" />
+											<h5>Ticket</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="items">
+								<div class="products">
+									<h2>Your products</h2>
+									<div class="list">
+										<div class="cart-item">
+											<img src="tmp-img/fashion-1623084_640.jpg" alt="..." />
+											<div class="item">
+												<div class="info">
+													<h4>Product name</h4>
+													<a href="#" class="remove-product">
+														<img src="img/trash.svg" alt="remove product" />
+													</a>
+												</div>
+												<div class="bottom-cart-item">
+													<p class="price">
+														<span>$</span>
+														<span>199.90</span>
+													</p>
+													<div class="quantity-item">
+														<button type="button" class="remove-item">-</button>
+														<span class="quantity">1</span>
+														<button type="button" class="add-item">+</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="total">
+										<p>
+											<span>Total:</span>
+											<span>
+												<span>$</span>
+												<span>199.99</span>
+											</span>
+										</p>
+										<p>
+											<span>Freight:</span>
+											<span>
+												<span>$</span>
+												<span>89.99</span>
+											</span>
+										</p>
+									</div>
+								</div>
+
+								<div class="promotional-code">
+									<h4>Promotional code</h4>
+									<form action="#">
+										<div class="input-field">
+											<label>Code</label>
+											<input type="text" name="code" placeholder="CODE" />
+										</div>
+
+										<button class="btn-success">Apply</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer -->
+
+			<footer>
+				<div class="container">
+					<div id="footer-content">
+						<div class="footer-col">
+							<a href="#" class="logo">
+								<img src="img/logo.png" alt="Logo" /><span>Fashion point</span>
+							</a>
+							<div>
+								<p>
+									Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+									Sequi asperiores, id veniam rem eius aliquam numquam. Optio,
+									quidem ab aut at illum molestias adipisci similique.
+									Reiciendis laboriosam repellendus fuga iusto.
+								</p>
+							</div>
+						</div>
+
+						<div class="footer-col">
+							<h5>Menu</h5>
+							<ul>
+								<li><a href="#" class="special-link">Home</a></li>
+								<li><a href="#" class="special-link">Offers</a></li>
+								<li><a href="#" class="special-link">About</a></li>
+								<li><a href="#" class="special-link">Blog</a></li>
+							</ul>
+						</div>
+
+						<div class="footer-col">
+							<h5>Contact us</h5>
+							<form action="#">
+								<div class="input-field">
+									<label>E-mail</label>
+									<input
+										type="email"
+										placeholder="email@example.com"
+										required
+									/>
+								</div>
+
+								<div class="input-field">
+									<label>Message</label>
+									<textarea
+										name="message"
+										placeholder="Your message"
+										required
+									></textarea>
+								</div>
+
+								<div>
+									<button type="submit" class="btn">Send</button>
+								</div>
+							</form>
+
+							<div id="social-media">
+								<ul>
+									<li>
+										<a href="#" target="_blank"
+											><img src="img/logo-facebook.svg" alt="facebook"
+										/></a>
+									</li>
+
+									<li>
+										<a href="#" target="_blank"
+											><img src="img/logo-instagram.svg" alt="instagram"
+										/></a>
+									</li>
+
+									<li>
+										<a href="#" target="_blank"
+											><img src="img/logo-twitter.svg" alt="twitter"
+										/></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div id="bottom-footer">
+						<p>
+							Made with <img src="img/heart-outline.svg" alt="heart" /> by
+							<span>Adriano Miranda</span> &copy; 2024
+						</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
