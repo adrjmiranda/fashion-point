@@ -40,6 +40,10 @@ footer {
 	gap: 1rem;
 }
 
+#footer-content form button {
+	width: 100%;
+}
+
 #footer-content #social-media ul {
 	display: flex;
 	flex-direction: row;
@@ -88,10 +92,6 @@ footer {
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
-	}
-
-	#footer-content form button {
-		width: 100%;
 	}
 }
 
