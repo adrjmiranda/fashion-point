@@ -58,12 +58,18 @@ select {
 }
 
 input,
-textarea {
+textarea,
+select {
 	padding: 0.3rem 0.5rem;
 }
 
+select {
+	background-color: var(--bg-main-color);
+}
+
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
 	border-color: var(--main-text-color);
 }
 
@@ -79,7 +85,7 @@ ul {
 .container {
 	max-width: 1280px;
 	margin: 0 auto;
-	padding: 0 0.5rem;
+	padding: 0 1rem;
 }
 
 .content {
