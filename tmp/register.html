@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<title>Fashion Point</title>
+
+		<!-- Styles -->
+
+		<link rel="stylesheet" href="css/master.css" />
+
+		<!-- Scripts -->
+
+		<script src="js/cart-visibility.js" defer></script>
+		<script src="js/mobile-menu-visibility.js" defer></script>
+		<script src="js/pass-visibility.js" defer></script>
+
+		<!-- Fonts -->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="main">
+			<!-- Register Form -->
+			<div class="container">
+				<div id="auth-container">
+					<div id="auth">
+						<a href="#" class="logo">
+							<img src="img/logo.png" alt="Logo" /><span>Fashion point</span>
+						</a>
+
+						<h1>Register now!</h1>
+
+						<form action="#">
+							<div class="input-field">
+								<label for="first-name">First name</label>
+								<input
+									type="text"
+									name="first_name"
+									id="first-name"
+									placeholder="Your first name"
+								/>
+							</div>
+
+							<div class="input-field">
+								<label for="last-name">Last name</label>
+								<input
+									type="text"
+									name="last_name"
+									id="last-name"
+									placeholder="Your last name"
+								/>
+							</div>
+
+							<div class="input-field">
+								<label for="email">E-mail</label>
+								<input
+									type="email"
+									name="email"
+									id="email"
+									placeholder="Your e-mail"
+								/>
+							</div>
+
+							<div class="input-field">
+								<label for="password">Password</label>
+								<input
+									type="password"
+									name="password"
+									id="password"
+									placeholder="Your password"
+								/>
+
+								<button
+									type="button"
+									id="toggle-pass-confirm"
+									class="visibility-pass"
+								>
+									<img
+										src="img/eye-off.svg"
+										alt="hide pass"
+										class="hide-pass hide"
+									/>
+									<img src="img/eye.svg" alt="show pass" class="show-pass" />
+								</button>
+							</div>
+
+							<div class="input-field">
+								<label>Password confirmation</label>
+								<input
+									type="password"
+									name="password_confirmation"
+									id="password-confirmation"
+									placeholder="Your password again"
+								/>
+
+								<button type="button" id="toggle-pass" class="visibility-pass">
+									<img
+										src="img/eye-off.svg"
+										alt="hide pass"
+										class="hide-pass hide"
+									/>
+									<img src="img/eye.svg" alt="show pass" class="show-pass" />
+								</button>
+							</div>
+
+							<div class="input-field check">
+								<input type="checkbox" name="terms" /><span
+									>Accept all terms of use</span
+								>
+							</div>
+
+							<button type="submit" class="btn">Register</button>
+						</form>
+
+						<p class="another-option">
+							Already have an account? <a href="#" class="">Login</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
