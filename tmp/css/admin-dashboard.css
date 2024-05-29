@@ -273,7 +273,8 @@
 }
 
 @media screen and (max-width: 955px) {
-	#dashboard #content-area .list table .hide-purchase-date {
+	#dashboard #content-area .list table .hide-purchase-date,
+	#dashboard #content-area .list table .hide-last-acess {
 		display: none;
 	}
 
@@ -311,14 +312,17 @@
 
 @media screen and (max-width: 630px) {
 	#dashboard #content-area .list table .hide-actions,
-	#dashboard #content-area .list table .hide-code {
+	#dashboard #content-area .list table .hide-code,
+	#dashboard #content-area .list table .hide-level,
+	#dashboard #content-area .list table .hide-status {
 		display: none;
 	}
 }
 
 @media screen and (max-width: 540px) {
 	#dashboard #content-area .list table .hide-total-price,
-	#dashboard #content-area .list table .hide-price {
+	#dashboard #content-area .list table .hide-price,
+	#dashboard #content-area .list table .hide-name {
 		display: none;
 	}
 }
