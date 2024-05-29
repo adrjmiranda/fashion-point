@@ -210,6 +210,34 @@
 
 /* Media Queries */
 
+@media screen and (max-width: 1190px) {
+	#dashboard #tabs .logo span {
+		font-size: 2.5rem;
+	}
+
+	#dashboard #tabs ul li {
+		margin-right: -1rem;
+	}
+
+	#dashboard #tabs ul li a {
+		background-color: var(--main-text-color);
+		color: var(--alt-text-color);
+		padding: 1.5rem;
+		display: block;
+		font-size: 1.2rem;
+		font-weight: 300;
+		border-top-left-radius: 1.5rem;
+		text-transform: capitalize;
+	}
+
+	#dashboard #tabs ul li a.active,
+	#dashboard #tabs ul li a:hover {
+		font-weight: 600;
+		border-bottom-left-radius: 1.5rem;
+		color: var(--bg-main-color);
+	}
+}
+
 @media screen and (max-width: 1040px) {
 	#dashboard #content-area .list table tr form {
 		display: block;
@@ -282,7 +310,8 @@
 }
 
 @media screen and (max-width: 630px) {
-	#dashboard #content-area .list table .hide-actions {
+	#dashboard #content-area .list table .hide-actions,
+	#dashboard #content-area .list table .hide-code {
 		display: none;
 	}
 }
