@@ -187,3 +187,18 @@ ul {
 .input-field label {
 	font-weight: 200;
 }
+
+.session {
+	position: relative;
+	width: 100vw;
+}
+
+.session h1 {
+	font-weight: 500;
+	text-transform: capitalize;
+	font-family: 'Pacifico', cursive;
+}
+
+.visibility {
+	display: flex !important;
+}
