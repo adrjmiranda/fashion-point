@@ -119,6 +119,29 @@
 	height: 32px;
 }
 
+#dashboard #content-area .organization .header-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#dashboard #content-area .organization .header-bottom .btn {
+	background-image: linear-gradient(
+		to right,
+		var(--main-text-color),
+		var(--alt-text-color)
+	);
+	font-weight: 500;
+}
+
+#dashboard #content-area .organization .header-bottom .btn:hover {
+	background-image: linear-gradient(
+		to left,
+		var(--main-text-color),
+		var(--alt-text-color)
+	);
+}
+
 #dashboard #content-area .organization .options {
 	display: flex;
 	justify-content: end;
@@ -222,7 +245,7 @@
 }
 
 @media screen and (max-width: 955px) {
-	#dashboard #content-area .list table tr .hide-date {
+	#dashboard #content-area .list table .hide-purchase-date {
 		display: none;
 	}
 
@@ -231,8 +254,25 @@
 	}
 }
 
+@media screen and (max-width: 760px) {
+	#dashboard #content-area .organization {
+		height: 220px;
+	}
+
+	#dashboard #content-area .organization .header-bottom {
+		flex-direction: column;
+		gap: 1rem;
+		align-items: start;
+	}
+
+	#dashboard #content-area .list {
+		margin-top: 220px;
+	}
+}
+
 @media screen and (max-width: 740px) {
-	#dashboard #content-area .list table tr .hide-quantity {
+	#dashboard #content-area .list table .hide-quantity,
+	#dashboard #content-area .list table .hide-id {
 		display: none;
 	}
 
@@ -242,22 +282,19 @@
 }
 
 @media screen and (max-width: 630px) {
-	#dashboard #content-area .list table tr .hide-actions {
+	#dashboard #content-area .list table .hide-actions {
 		display: none;
 	}
 }
 
 @media screen and (max-width: 540px) {
-	#dashboard #content-area .list table tr .hide-price {
+	#dashboard #content-area .list table .hide-total-price,
+	#dashboard #content-area .list table .hide-price {
 		display: none;
 	}
 }
 
 @media screen and (max-width: 520px) {
-	#dashboard #content-area .organization {
-		height: 250px;
-	}
-
 	#dashboard #content-area .organization .options {
 		flex-direction: column;
 	}
@@ -266,9 +303,5 @@
 	#dashboard #content-area .organization .options form .field input,
 	#dashboard #content-area .organization .options form .field select {
 		flex: 1;
-	}
-
-	#dashboard #content-area .list {
-		margin-top: 250px;
 	}
 }
