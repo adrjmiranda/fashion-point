@@ -125,7 +125,7 @@
 	align-items: center;
 }
 
-#dashboard #content-area .organization .header-bottom .btn {
+#dashboard #content-area .btn.special {
 	background-image: linear-gradient(
 		to right,
 		var(--main-text-color),
@@ -134,7 +134,7 @@
 	font-weight: 500;
 }
 
-#dashboard #content-area .organization .header-bottom .btn:hover {
+#dashboard #content-area .btn.special:hover {
 	background-image: linear-gradient(
 		to left,
 		var(--main-text-color),
@@ -206,6 +206,89 @@
 #dashboard #content-area .list table th {
 	padding: 0.5rem;
 	border: 1px solid var(--alt-text-color);
+}
+
+/* New product */
+
+#dashboard #content-area .new-product {
+	margin-top: 150px;
+	display: flex;
+	gap: 2rem;
+}
+
+#dashboard #content-area .new-product form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	flex: 50%;
+}
+
+#dashboard #content-area .new-product form .field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+#dashboard #content-area .new-product form .field > label {
+	font-weight: 300;
+}
+
+#dashboard #content-area .new-product form .field .check {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+#dashboard #content-area .new-product form .field .check label {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+#dashboard #content-area .new-product form .field .add-color {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+#dashboard #content-area .new-product form .field .add-color button img {
+	height: 24px;
+}
+
+#dashboard #content-area .new-product form .field #colors {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+#dashboard #content-area .new-product form .field #colors li {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+#dashboard #content-area .new-product form .field #colors li span {
+	height: 24px;
+	width: 24px;
+	display: block;
+	border-radius: 50%;
+	border: 1px solid var(--main-text-color);
+}
+
+#dashboard #content-area .new-product #main-img-preview {
+	background-image: url('../img/img-preview.png');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: calc(100vh - 250px);
+	flex: 50%;
+	width: 100%;
+	border: 1px solid var(--alt-text-color);
+	border-radius: 0.2rem;
 }
 
 /* Media Queries */
@@ -297,6 +380,10 @@
 	#dashboard #content-area .list {
 		margin-top: 220px;
 	}
+
+	#dashboard #content-area .new-product {
+		margin-top: 220px;
+	}
 }
 
 @media screen and (max-width: 740px) {
@@ -310,12 +397,22 @@
 	}
 }
 
+@media screen and (max-width: 710px) {
+	#dashboard #content-area .new-product #main-img-preview {
+		display: none;
+	}
+}
+
 @media screen and (max-width: 630px) {
 	#dashboard #content-area .list table .hide-actions,
 	#dashboard #content-area .list table .hide-code,
 	#dashboard #content-area .list table .hide-level,
 	#dashboard #content-area .list table .hide-status {
 		display: none;
+	}
+
+	#dashboard #content-area .new-product form button[type='submit'] {
+		width: 100%;
 	}
 }
 

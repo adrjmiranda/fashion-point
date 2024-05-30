@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<title>Fashion Point</title>
+
+		<!-- Styles -->
+
+		<link rel="stylesheet" href="css/master.css" />
+
+		<!-- Scripts -->
+
+		<script src="js/cart-visibility.js" defer></script>
+		<script src="js/mobile-menu-visibility.js" defer></script>
+		<script src="js/session-menu-visibility.js" defer></script>
+		<script src="js/img-preview.js" defer></script>
+
+		<!-- Fonts -->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="dashboard" class="session">
+			<!-- Tabs -->
+
+			<div id="tabs">
+				<a href="#" class="logo">
+					<span>Fashion point</span>
+				</a>
+
+				<button type="button" id="choose-session-close">X</button>
+
+				<ul>
+					<li>
+						<a href="#">Orders</a>
+					</li>
+
+					<li>
+						<a href="#" class="active">Products</a>
+					</li>
+
+					<li>
+						<a href="#">Finalized orders</a>
+					</li>
+
+					<li>
+						<a href="#">Users</a>
+					</li>
+
+					<li>
+						<a href="#">Administrators</a>
+					</li>
+				</ul>
+
+				<div class="out">
+					<a href="#" class="btn">Logout</a>
+				</div>
+			</div>
+
+			<!-- Content Area -->
+
+			<div id="content-area">
+				<div class="content">
+					<!-- Organization -->
+
+					<div class="organization">
+						<div class="header">
+							<h1>Add new product</h1>
+							<button type="button" id="choose-session">
+								<img src="img/menu.svg" alt="menu" />
+							</button>
+						</div>
+
+						<div class="header-bottom">
+							<a href="#" class="btn special">Cancel</a>
+						</div>
+					</div>
+
+					<!-- New Product -->
+
+					<div class="new-product">
+						<form action="#" enctype="multipart/form-data">
+							<div class="field">
+								<label for="name">Name:</label>
+								<input
+									type="text"
+									name="name"
+									id="name"
+									placeholder="Product name"
+								/>
+							</div>
+
+							<div class="field">
+								<label for="description">Description:</label>
+								<textarea
+									name="description"
+									id="description"
+									placeholder="Describe this product"
+								></textarea>
+							</div>
+
+							<div class="field">
+								<label for="images">Images (max: 4):</label>
+								<input type="file" name="images[]" id="images" multiple />
+							</div>
+
+							<div class="field">
+								<label for="stock">Stock</label>
+								<input
+									type="number"
+									name="stock"
+									id="stock"
+									min="1"
+									value="1"
+								/>
+							</div>
+
+							<div class="field">
+								<label>Sizes (min: 1):</label>
+								<div class="check">
+									<label
+										>PP<input type="checkbox" name="sizes[]" checked value="PP"
+									/></label>
+									<label
+										>P<input type="checkbox" name="sizes[]" checked value="P"
+									/></label>
+									<label
+										>M<input type="checkbox" name="sizes[]" checked value="M"
+									/></label>
+									<label
+										>G<input type="checkbox" name="sizes[]" checked value="G"
+									/></label>
+									<label
+										>GG<input type="checkbox" name="sizes[]" checked value="GG"
+									/></label>
+								</div>
+							</div>
+
+							<div class="field">
+								<label>Add colors (max: 7):</label>
+								<div class="add-color">
+									<input type="color" />
+									<button type="button">
+										<img src="img/add-circle.svg" alt="add" />
+									</button>
+								</div>
+
+								<ul class="check" id="colors">
+									<li>
+										<span style="background-color: brown"></span>
+										<button>X</button>
+									</li>
+
+									<li>
+										<span style="background-color: blueviolet"></span>
+										<button>X</button>
+									</li>
+								</ul>
+							</div>
+
+							<button type="submit" class="btn special">Create</button>
+						</form>
+
+						<div id="main-img-preview"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
