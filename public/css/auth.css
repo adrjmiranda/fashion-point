@@ -1,0 +1,101 @@
+/* Auth form */
+
+#auth-container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#auth {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	max-width: 450px;
+	flex: 1;
+	margin: 0 auto;
+}
+
+#auth h1,
+#auth .logo {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#auth h1 {
+	font-weight: 500;
+	text-transform: capitalize;
+}
+
+#auth form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+#auth form .input-field label {
+	text-transform: capitalize;
+}
+
+#auth form .input-field {
+	position: relative;
+}
+
+#auth form .input-field.check {
+	flex-direction: row;
+}
+
+#auth form .input-field.check input {
+	cursor: pointer;
+}
+
+#auth form .input-field.check span {
+	font-weight: 300;
+}
+
+#auth form button {
+	width: 100%;
+}
+
+#auth .another-option {
+	font-weight: 300;
+}
+
+#auth .another-option a {
+	font-weight: 400;
+}
+
+#auth .another-option a:hover {
+	background-image: linear-gradient(
+		to right,
+		var(--main-color),
+		var(--secondary-color)
+	);
+	background-clip: text;
+	-webkit-background-clip: transparent;
+	-webkit-text-fill-color: transparent;
+}
+
+#auth .visibility-pass {
+	position: absolute;
+	right: 0.3rem;
+	top: 1.8rem;
+	width: fit-content;
+	cursor: pointer;
+}
+
+#auth .visibility-pass img {
+	height: 24px;
+	opacity: 0.1;
+	transition: all 0.2s ease-out;
+}
+
+#auth .visibility-pass:hover img {
+	opacity: 1;
+}
+
+#auth .hide {
+	display: none;
+}

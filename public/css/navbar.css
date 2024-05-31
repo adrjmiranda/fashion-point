@@ -1,0 +1,145 @@
+/* Navbar */
+
+#nav {
+	position: fixed;
+	z-index: 20;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: var(--bg-main-color);
+	box-shadow: 1px 1px 25px 1px rgba(0, 0, 0, 0.05);
+}
+
+#navbar {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 80px;
+}
+
+.nav-menu ul {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.search form {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+}
+
+.search form button img {
+	height: 24px;
+}
+
+.status ul {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.status ul li img {
+	height: 28px;
+}
+
+#cart-show,
+#cart-show-mobile {
+	position: relative;
+}
+
+.notify {
+	position: absolute;
+	background-color: var(--main-color);
+	min-height: 18px;
+	min-width: 18px;
+	border-radius: 50%;
+	color: var(--simple-text-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: -0.3rem;
+	left: -0.5rem;
+}
+
+#toggle-menu {
+	display: none;
+	position: relative;
+}
+
+#toggle-menu button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#toggle-menu img {
+	height: 32px;
+}
+
+#mobile-menu {
+	display: none;
+	width: 100%;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 950px) {
+	#navbar {
+		flex-wrap: wrap;
+		height: auto;
+		padding: 1.5rem 0;
+	}
+
+	#toggle-menu {
+		display: flex;
+	}
+
+	.nav-menu,
+	.search,
+	.status {
+		display: none;
+	}
+
+	/* Mobile Menu */
+
+	#mobile-menu {
+		justify-content: space-between;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		padding: 1.5rem 0;
+	}
+
+	#mobile-menu.toggle-visibility {
+		display: flex;
+	}
+
+	.nav-menu.mobile-menu,
+	.search.mobile-menu,
+	.status.mobile-menu {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+	}
+
+	.nav-menu.mobile-menu ul {
+		flex-direction: column;
+	}
+
+	.search.mobile-menu form {
+		width: 100%;
+		position: relative;
+	}
+
+	.search.mobile-menu form input {
+		width: 100%;
+	}
+
+	.search.mobile-menu form button {
+		position: absolute;
+		right: 0.5rem;
+		top: 0.1rem;
+	}
+}

@@ -6,15 +6,15 @@ use App\Utils\View;
 
 class Controller
 {
-  private View $view;
+  private View $template;
 
   public function __construct(string $viewBaseFolder)
   {
-    $this->view = new View($viewBaseFolder);
+    $this->template = new View($viewBaseFolder);
   }
 
-  protected function view(string $view, array $data = [])
+  protected function view(string $view, array $data = []): void
   {
-    echo $this->view->render($view, $data);
+    echo $this->template->render($view, $data);
   }
 }

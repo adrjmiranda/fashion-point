@@ -2,6 +2,6 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\Controllers\Admin\Dashboard;
+use App\Controllers\Admin\Login;
 
-(new Dashboard)->index();
+(new Login)->index();

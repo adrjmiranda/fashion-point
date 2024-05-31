@@ -7,7 +7,7 @@ use Exception;
 class View
 {
   private string $baseFolder;
-  private string $content = '';
+  private ?string $content;
   private ?string $layout;
   private array $data = [];
 
@@ -16,9 +16,8 @@ class View
     $this->baseFolder = $baseFolder;
   }
 
-  private function getFile(
-    string $view
-  ) {
+  private function getFile(string $view): bool|string
+  {
     if (!preg_match('/^[a-zA-Z0-9_\-]+$/', $view) || !preg_match('/^[a-zA-Z0-9_\-]+$/', $this->baseFolder)) {
       throw new Exception("Invalid template name.");
     }
@@ -39,7 +38,7 @@ class View
     return $file;
   }
 
-  public function render(string $view, array $data = [])
+  public function render(string $view, array $data = []): mixed
   {
     ob_start();
 
@@ -66,14 +65,14 @@ class View
     return $content;
   }
 
-  private function extend(string $layout, array $data = [])
+  private function extend(string $layout, array $data = []): void
   {
     $this->layout = $layout;
     $this->data = $data;
   }
 
-  private function load()
+  private function load(): mixed
   {
-    return !empty($this->content) ? $this->content : '';
+    return !empty($this->content) ? $this->content : null;
   }
 }

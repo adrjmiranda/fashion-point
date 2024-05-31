@@ -1,0 +1,11 @@
+@import 'global.css';
+@import 'cart.css';
+@import 'navbar.css';
+@import 'banner.css';
+@import 'products-area.css';
+@import 'product.css';
+@import 'checkout-area.css';
+@import 'payment-area.css';
+@import 'auth.css';
+@import 'admin-dashboard.css';
+@import 'footer.css';
