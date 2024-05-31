@@ -328,6 +328,38 @@
 	opacity: 1;
 }
 
+/* New Administrator */
+
+#dashboard #content-area .new-administrator {
+	margin-top: 150px;
+	display: flex;
+}
+
+#dashboard #content-area .new-administrator form {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap: 1rem;
+	border: 1px solid var(--alt-text-color);
+	padding: 1rem;
+	border-radius: 0.2rem;
+}
+
+#dashboard #content-area .new-administrator form .field {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+#dashboard #content-area .new-administrator form .field label {
+	font-weight: 300;
+}
+
+#dashboard #content-area .new-administrator form .field input {
+	flex: 1;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1190px) {
@@ -421,6 +453,10 @@
 	#dashboard #content-area .new-product {
 		margin-top: 220px;
 	}
+
+	#dashboard #content-area .new-administrator {
+		margin-top: 220px;
+	}
 }
 
 @media screen and (max-width: 740px) {
@@ -454,6 +490,10 @@
 }
 
 @media screen and (max-width: 540px) {
+	#dashboard #content-area .btn.special {
+		width: 100%;
+	}
+
 	#dashboard #content-area .list table .hide-total-price,
 	#dashboard #content-area .list table .hide-price,
 	#dashboard #content-area .list table .hide-name {

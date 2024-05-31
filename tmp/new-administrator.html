@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<title>Fashion Point</title>
+
+		<!-- Styles -->
+
+		<link rel="stylesheet" href="css/master.css" />
+
+		<!-- Scripts -->
+
+		<script src="js/cart-visibility.js" defer></script>
+		<script src="js/mobile-menu-visibility.js" defer></script>
+		<script src="js/session-menu-visibility.js" defer></script>
+
+		<!-- Fonts -->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="dashboard" class="session">
+			<!-- Tabs -->
+
+			<div id="tabs">
+				<a href="#" class="logo">
+					<span>Fashion point</span>
+				</a>
+
+				<button type="button" id="choose-session-close">X</button>
+
+				<ul>
+					<li>
+						<a href="#">Orders</a>
+					</li>
+
+					<li>
+						<a href="#">Products</a>
+					</li>
+
+					<li>
+						<a href="#">Finalized orders</a>
+					</li>
+
+					<li>
+						<a href="#">Users</a>
+					</li>
+
+					<li>
+						<a href="#" class="active">Administrators</a>
+					</li>
+				</ul>
+
+				<div class="out">
+					<a href="#" class="btn">Logout</a>
+				</div>
+			</div>
+
+			<!-- Content Area -->
+
+			<div id="content-area">
+				<div class="content">
+					<!-- Organization -->
+
+					<div class="organization">
+						<div class="header">
+							<h1>Add new administrator</h1>
+							<button type="button" id="choose-session">
+								<img src="img/menu.svg" alt="menu" />
+							</button>
+						</div>
+
+						<div class="header-bottom">
+							<a href="#" class="btn special">Cancel</a>
+						</div>
+					</div>
+
+					<!-- New Admnistrator -->
+
+					<div class="new-administrator">
+						<form action="#">
+							<div class="field">
+								<label for="first-name">First name:</label>
+								<input
+									type="text"
+									name="first_name"
+									id="first-name"
+									placeholder="Your first name"
+								/>
+							</div>
+
+							<div class="field">
+								<label for="last-name">Last name:</label>
+								<input
+									type="text"
+									name="last_name"
+									id="last-name"
+									placeholder="Your last name"
+								/>
+							</div>
+
+							<div class="field">
+								<label for="email">E-mail:</label>
+								<input
+									type="email"
+									name="email"
+									id="email"
+									placeholder="Your email"
+								/>
+							</div>
+
+							<div class="field">
+								<label for="password">Password:</label>
+								<input
+									type="password"
+									name="password"
+									id="password"
+									placeholder="Your password"
+								/>
+							</div>
+
+							<div class="field">
+								<label for="password-confirmation"
+									>Password confirmation:</label
+								>
+								<input
+									type="password"
+									name="password_confirmation"
+									id="password-confirmation"
+									placeholder="Your password again"
+								/>
+							</div>
+
+							<button type="submit" class="btn special">Add</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

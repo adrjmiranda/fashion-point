@@ -1,13 +1,13 @@
-const imgPrev = document.querySelector('.main-image');
-const thumbnails = document.querySelectorAll('.thumbnails img');
+const imagePrevious = document.querySelector('.main-image');
+const thumbnailList = document.querySelectorAll('.thumbnails img');
 
-thumbnails &&
-	thumbnails.forEach((item) => {
+thumbnailList &&
+	thumbnailList.forEach((item) => {
 		item.addEventListener('mouseover', () => {
 			const thumbImg = item.getAttribute('src');
-			imgPrev.setAttribute('src', thumbImg);
+			imagePrevious.setAttribute('src', thumbImg);
 
-			thumbnails.forEach((item) => {
+			thumbnailList.forEach((item) => {
 				item.classList.remove('active');
 			});
 
