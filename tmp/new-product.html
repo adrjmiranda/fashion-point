@@ -18,6 +18,8 @@
 		<script src="js/session-menu-visibility.js" defer></script>
 		<script src="js/img-preview.js" defer></script>
 		<script src="js/change-preview-image.js" defer></script>
+		<script src="js/choose-color.js" defer></script>
+		<script src="js/remove-color.js" defer></script>
 
 		<!-- Fonts -->
 
@@ -148,23 +150,13 @@
 							<div class="field">
 								<label>Add colors (max: 7):</label>
 								<div class="add-color">
-									<input type="color" />
-									<button type="button">
+									<input type="color" id="color-input" />
+									<button type="button" id="color-add">
 										<img src="img/add-circle.svg" alt="add" />
 									</button>
 								</div>
 
-								<ul class="check" id="colors">
-									<li>
-										<span style="background-color: brown"></span>
-										<button>X</button>
-									</li>
-
-									<li>
-										<span style="background-color: blueviolet"></span>
-										<button>X</button>
-									</li>
-								</ul>
+								<ul class="check" id="colors"></ul>
 							</div>
 
 							<button type="submit" class="btn special">Create</button>
