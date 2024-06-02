@@ -108,7 +108,7 @@ class Router
       $controller = $this->routes[$requestHttpMethod][$requestUri][0];
       $method = $this->routes[$requestHttpMethod][$requestUri][1];
 
-      $content = $controller->$method();
+      $content = $controller->$method($this->request);
 
       $response = new Response($content);
 

@@ -188,6 +188,12 @@ ul {
 	font-weight: 200;
 }
 
+.form-field-error {
+	font-weight: 200;
+	color: crimson;
+	text-align: center;
+}
+
 .session {
 	position: relative;
 	width: 100vw;

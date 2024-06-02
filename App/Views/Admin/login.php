@@ -13,15 +13,19 @@ $this->extend('auth');
 
   <h1>Welcome back!</h1>
 
-  <form action="#">
+  <form action="/admin/login" method="post">
     <div class="input-field">
       <label for="email">E-mail</label>
       <input type="email" name="email" id="email" placeholder="Your e-mail" />
+
+      <p class="form-field-error"><?= $errors['email'] ?? '' ?></p>
     </div>
 
     <div class="input-field">
       <label for="password">Password</label>
       <input type="password" name="password" id="password" placeholder="Your password" />
+
+      <p class="form-field-error"><?= $errors['password'] ?? '' ?></p>
 
       <button type="button" id="toggle-pass" class="visibility-pass">
         <img src="<?= $baseUrl ?>/img/eye-off.svg" alt="hide pass" class="hide-pass hide" />

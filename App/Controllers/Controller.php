@@ -7,6 +7,7 @@ use App\Utils\View;
 class Controller
 {
   private View $template;
+  protected object $controller;
 
   public function __construct(string $viewBaseFolder)
   {
