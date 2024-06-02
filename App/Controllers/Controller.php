@@ -10,11 +10,13 @@ class Controller
 
   public function __construct(string $viewBaseFolder)
   {
-    $this->template = new View($viewBaseFolder);
+    $baseUrl = $_ENV['BASE_URL'];
+
+    $this->template = new View($viewBaseFolder, $baseUrl);
   }
 
-  protected function view(string $view, array $data = []): void
+  protected function view(string $view, array $data = []): mixed
   {
-    echo $this->template->render($view, $data);
+    return $this->template->render($view, $data);
   }
 }

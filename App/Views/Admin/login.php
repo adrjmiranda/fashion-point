@@ -8,7 +8,7 @@ $this->extend('auth');
 
 <div id="auth">
   <a href="#" class="logo">
-    <img src="img/logo.png" alt="Logo" /><span>Fashion point</span>
+    <img src="<?= $baseUrl ?>/img/logo.png" alt="Logo" /><span>Fashion point</span>
   </a>
 
   <h1>Welcome back!</h1>
@@ -24,8 +24,8 @@ $this->extend('auth');
       <input type="password" name="password" id="password" placeholder="Your password" />
 
       <button type="button" id="toggle-pass" class="visibility-pass">
-        <img src="img/eye-off.svg" alt="hide pass" class="hide-pass hide" />
-        <img src="img/eye.svg" alt="show pass" class="show-pass" />
+        <img src="<?= $baseUrl ?>/img/eye-off.svg" alt="hide pass" class="hide-pass hide" />
+        <img src="<?= $baseUrl ?>/img/eye.svg" alt="show pass" class="show-pass" />
       </button>
     </div>
 

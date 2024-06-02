@@ -11,9 +11,10 @@ class View
   private ?string $layout;
   private array $data = [];
 
-  public function __construct($baseFolder)
+  public function __construct(string $baseFolder, string $baseUrl)
   {
     $this->baseFolder = $baseFolder;
+    $this->data[] = $baseUrl;
   }
 
   private function getFile(string $view): bool|string

@@ -1,7 +1,10 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../bootstrap.php';
 
-use App\Controllers\Admin\Login;
+// Add Admin Routes
+include_once __DIR__ . '/../App/Routes/admin.php';
 
-(new Login)->index();
+$response = $router->run();
+
+$response->sendResponse();
