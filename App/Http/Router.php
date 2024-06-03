@@ -10,19 +10,12 @@ class Router
   private Request $request;
   private static string $baseUrl;
   private array $routes;
-  private array $middlewares;
-  private string $contentType;
 
   public function __construct(string $baseUrl)
   {
     $this->request = new Request($this);
     self::$baseUrl = $baseUrl;
   }
-
-  // public function setContentType(string $contentType)
-  // {
-  //   $this->contentType = $contentType;
-  // }
 
   private function addRoute(string $httpMethod, string $uri, object $controller, string $method, array $middlewareList): void
   {
@@ -104,12 +97,6 @@ class Router
 
       $controller = $this->routes[$requestHttpMethod][$requestUri][0];
       $method = $this->routes[$requestHttpMethod][$requestUri][1];
-
-      // $content = $controller->$method($this->request);
-
-      // $response = new Response($content);
-
-      // return $response;
 
       $middlewareList = $this->routes[$requestHttpMethod][$requestUri]['middlewares'];
 

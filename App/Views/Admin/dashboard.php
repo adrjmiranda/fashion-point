@@ -2,134 +2,78 @@
 /**
  * @var App\Utils\View $this
  */
-
-$this->extend('master', ['title' => 'Miranda']);
 ?>
 
-<div id="dashboard" class="session">
-  <!-- Tabs -->
+<!DOCTYPE html>
+<html lang="en">
 
-  <div id="tabs">
-    <a href="#" class="logo">
-      <span>Fashion point</span>
-    </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="<?= $baseUrl ?>/favicon.ico" type="image/x-icon" />
+  <title><?= $title ?></title>
 
-    <button type="button" id="choose-session-close">X</button>
+  <!-- Styles -->
 
-    <ul>
-      <li>
-        <a href="#" class="active">Orders</a>
-      </li>
+  <link rel="stylesheet" href="<?= $baseUrl ?>/css/master.css" />
 
-      <li>
-        <a href="#">Products</a>
-      </li>
+  <!-- Scripts -->
 
-      <li>
-        <a href="#">Finalized orders</a>
-      </li>
+  <script src="<?= $baseUrl ?>/js/cart-visibility.js" defer></script>
+  <script src="<?= $baseUrl ?>/js/mobile-menu-visibility.js" defer></script>
+  <script src="<?= $baseUrl ?>/js/session-menu-visibility.js" defer></script>
 
-      <li>
-        <a href="#">Users</a>
-      </li>
+  <!-- Fonts -->
 
-      <li>
-        <a href="#">Administrators</a>
-      </li>
-    </ul>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&display=swap"
+    rel="stylesheet" />
+</head>
 
-    <div class="out">
-      <a href="/admin/logout" class="btn">Logout</a>
-    </div>
-  </div>
+<body>
+  <div id="dashboard" class="session">
+    <!-- Tabs -->
 
-  <!-- Content Area -->
+    <div id="tabs">
+      <a href="#" class="logo">
+        <span>Fashion point</span>
+      </a>
 
-  <div id="content-area">
-    <div class="content">
-      <!-- Organization -->
+      <button type="button" id="choose-session-close">X</button>
 
-      <div class="organization">
-        <div class="header">
-          <h1>Orders</h1>
-          <button type="button" id="choose-session">
-            <img src="<?= $baseUrl ?>/img/menu.svg" alt="menu" />
-          </button>
-        </div>
+      <ul>
+        <li>
+          <a href="/admin/dashboard/orders" class="active">Orders</a>
+        </li>
 
-        <div class="options">
-          <form action="#" id="filter">
-            <div class="field">
-              <label for="order-by">Order by:</label>
-              <select name="order_by" id="order-by">
-                <option value="title">Title</option>
-                <option value="last" selected>Last</option>
-                <option value="older">Older</option>
-                <option value="active">Active</option>
-                <option value="sent">Sent</option>
-                <option value="canceled">Canceled</option>
-              </select>
-            </div>
-          </form>
+        <li>
+          <a href="/admin/dashboard/products">Products</a>
+        </li>
 
-          <form action="#" id="search">
-            <div class="field">
-              <label for="query"> Search: </label>
-              <input type="search" name="query" id="query" placeholder="Looking for what?" />
-            </div>
-            <button type="submit">
-              <img src="<?= $baseUrl ?>/img/search.svg" alt="search" />
-            </button>
-          </form>
-        </div>
-      </div>
+        <li>
+          <a href="/admin/dashboard/finalized-orders">Finalized orders</a>
+        </li>
 
-      <!-- List -->
+        <li>
+          <a href="/admin/dashboard/users">Users</a>
+        </li>
 
-      <div class="list">
-        <table>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Code</th>
-              <th class="hide-quantity">Quantity</th>
-              <th class="hide-total-price">Total price</th>
-              <th class="hide-purchase-date">Purchase date</th>
-              <th class="hide-actions">Actions</th>
-              <th>Status</th>
-            </tr>
-          </thead>
+        <li>
+          <a href="/admin/dashboard/administrators">Administrators</a>
+        </li>
+      </ul>
 
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>E4k67l0f82lcbPICxHqe</td>
-              <td class="hide-quantity">5</td>
-              <td class="hide-total-price">$ <span>323.99</span></td>
-              <td class="hide-purchase-date">12/03/2024 10:30:32</td>
-              <td class="hide-actions">
-                <a href="#">
-                  <img src="<?= $baseUrl ?>/img/document.svg" alt="edit" />
-                </a>
-                <a href="#">
-                  <img src="<?= $baseUrl ?>/img/trash.svg" alt="remove" />
-                </a>
-              </td>
-              <td>
-                <form action="#" class="status">
-                  <select name="status">
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
-                    <option value="sent">Sent</option>
-                    <option value="canceled">Canceled</option>
-                    <option value="canceled">Finish</option>
-                  </select>
-                </form>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="out">
+        <a href="/admin/logout" class="btn">Logout</a>
       </div>
     </div>
+
+    <!-- Content Area -->
+
+    <?= $this->load() ?>
   </div>
-</div>
+</body>
+
+</html>

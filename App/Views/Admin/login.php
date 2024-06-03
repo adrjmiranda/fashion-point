@@ -3,7 +3,7 @@
  * @var App\Utils\View $this
  */
 
-$this->extend('auth');
+$this->extend('auth', ['title' => 'Fashion Point']);
 ?>
 
 <div id="auth">

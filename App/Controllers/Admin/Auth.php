@@ -59,7 +59,7 @@ class Auth extends Controller
 
     Session::setLogin($data);
 
-    $request->getRouter()->redirect('/admin/dashboard');
+    $request->getRouter()->redirect('/admin/dashboard/orders');
   }
 
   public function logout(Request $request)

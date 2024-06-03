@@ -12,7 +12,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="<?= $baseUrl ?>/favicon.ico" type="image/x-icon" />
-  <title>Fashion Point</title>
+  <title><?= $title ?></title>
 
   <!-- Styles -->
   <link rel="stylesheet" href="<?= $baseUrl ?>/css/master.css" />

@@ -12,7 +12,7 @@ class RequireLogout
     $key = isset($_SESSION['admin']) ? 'admin' : (isset($_SESSION['user']) ? 'user' : '');
 
     if (Session::isLogged($key)) {
-      $request->getRouter()->redirect('/admin/dashboard');
+      $request->getRouter()->redirect('/admin/dashboard/orders');
     }
 
     return $next($request);
