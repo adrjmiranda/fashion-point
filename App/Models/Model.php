@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use App\Config\Database;
-use Exception;
 use PDO;
 use PDOException;
+use Exception;
 
 class Model
 {

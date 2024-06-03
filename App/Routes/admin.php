@@ -1,10 +1,27 @@
 <?php
 
-use App\Http\Router;
+// Login and Logout
+$router->get(
+  '/admin/login',
+  'App\\Controllers\\Admin\\Auth@index',
+  ['App\\Middlewares\\RequireLogout']
+);
 
-$url = 'http://localhost:8000';
+$router->post(
+  '/admin/login',
+  'App\\Controllers\\Admin\\Auth@login',
+  ['App\\Middlewares\\RequireLogout']
+);
 
-$router = new Router($url);
+$router->get(
+  '/admin/logout',
+  'App\\Controllers\\Admin\\Auth@logout',
+  ['App\\Middlewares\\RequireLogin']
+);
 
-$router->get('/admin/login', 'App\\Controllers\\Admin\\Login@index');
-$router->post('/admin/login', 'App\\Controllers\\Admin\\Login@login');
+// Dashboard
+$router->get(
+  '/admin/dashboard',
+  'App\\Controllers\\Admin\\Dashboard@index',
+  ['App\\Middlewares\\RequireLogin']
+);

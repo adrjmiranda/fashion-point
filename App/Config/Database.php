@@ -15,16 +15,16 @@ class Database
     $dbPass = $_ENV['DB_PASS'];
 
     if (is_null(Database::$pdo)) {
-      Database::$pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
+      self::$pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
 
       // Set Fetch
-      Database::$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+      self::$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
       // Set Exceptions
-      Database::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       // Database::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
     }
 
-    return Database::$pdo;
+    return self::$pdo;
   }
 }

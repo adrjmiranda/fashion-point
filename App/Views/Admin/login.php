@@ -16,14 +16,15 @@ $this->extend('auth');
   <form action="/admin/login" method="post">
     <div class="input-field">
       <label for="email">E-mail</label>
-      <input type="email" name="email" id="email" placeholder="Your e-mail" />
+      <input type="email" name="email" id="email" value="<?= $fields['email'] ?? '' ?>" placeholder="Your e-mail" />
 
       <p class="form-field-error"><?= $errors['email'] ?? '' ?></p>
     </div>
 
     <div class="input-field">
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" placeholder="Your password" />
+      <input type="password" name="password" id="password" value="<?= $fields['password'] ?? '' ?>"
+        placeholder="Your password" />
 
       <p class="form-field-error"><?= $errors['password'] ?? '' ?></p>
 

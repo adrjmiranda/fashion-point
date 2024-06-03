@@ -11,10 +11,8 @@ class Dashboard extends Controller
     parent::__construct('Admin');
   }
 
-  public function index(): void
+  public function index(): mixed
   {
-    $this->view('dashboard', [
-      'name' => 'Miranda'
-    ]);
+    return $this->view('dashboard');
   }
 }

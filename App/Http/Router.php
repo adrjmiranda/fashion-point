@@ -2,20 +2,21 @@
 
 namespace App\Http;
 
+use App\Middlewares\Queu;
 use Exception;
 
 class Router
 {
   private Request $request;
-  private string $url;
+  private static string $baseUrl;
   private array $routes;
   private array $middlewares;
   private string $contentType;
 
-  public function __construct(string $url)
+  public function __construct(string $baseUrl)
   {
-    $this->request = new Request;
-    $this->url = $url;
+    $this->request = new Request($this);
+    self::$baseUrl = $baseUrl;
   }
 
   // public function setContentType(string $contentType)
@@ -23,13 +24,14 @@ class Router
   //   $this->contentType = $contentType;
   // }
 
-  private function addRoute(string $httpMethod, string $uri, object $controller, string $method): void
+  private function addRoute(string $httpMethod, string $uri, object $controller, string $method, array $middlewareList): void
   {
     if (!isset($this->routes[$httpMethod])) {
       $this->routes[$httpMethod] = [
         $uri => [
           $controller,
-          $method
+          $method,
+          'middlewares' => $middlewareList
         ]
       ];
     } else {
@@ -37,18 +39,13 @@ class Router
         throw new Exception("Redeclaration of the same uri $uri for the same http $httpMethod method not accepted");
       }
 
-      array_push($this->routes[$httpMethod], [
-        $uri => [
-          $controller,
-          $method
-        ]
-      ]);
+      $this->routes[$httpMethod][$uri] = [
+        $controller,
+        $method,
+        'middlewares' => $middlewareList
+      ];
     }
   }
-
-  // public function addMiddleware(string $middleware)
-  // {
-  // }
 
   private function getController(string $handle): object
   {
@@ -75,20 +72,20 @@ class Router
     return $method;
   }
 
-  public function get(string $uri, string $handle): void
+  public function get(string $uri, string $handle, array $middlewareList = []): void
   {
     $controller = $this->getController($handle);
     $method = $this->getMethod($handle);
 
-    $this->addRoute('GET', $uri, $controller, $method);
+    $this->addRoute('GET', $uri, $controller, $method, $middlewareList);
   }
 
-  public function post(string $uri, string $handle): void
+  public function post(string $uri, string $handle, array $middlewareList = []): void
   {
     $controller = $this->getController($handle);
     $method = $this->getMethod($handle);
 
-    $this->addRoute('POST', $uri, $controller, $method);
+    $this->addRoute('POST', $uri, $controller, $method, $middlewareList);
   }
 
   public function run(): Response
@@ -108,15 +105,26 @@ class Router
       $controller = $this->routes[$requestHttpMethod][$requestUri][0];
       $method = $this->routes[$requestHttpMethod][$requestUri][1];
 
-      $content = $controller->$method($this->request);
+      // $content = $controller->$method($this->request);
 
-      $response = new Response($content);
+      // $response = new Response($content);
 
-      return $response;
+      // return $response;
+
+      $middlewareList = $this->routes[$requestHttpMethod][$requestUri]['middlewares'];
+
+      return (new Queu($controller, $method, $middlewareList))->next($this->request);
     } catch (Exception $e) {
       $response = new Response($e->getMessage(), $e->getCode());
 
       return $response;
     }
+  }
+
+  public function redirect(string $uri)
+  {
+    $url = self::$baseUrl . $uri;
+    header('location: ' . $url);
+    exit;
   }
 }
