@@ -10,6 +10,7 @@ class Request
   private string $httpMethod;
   private array $postVars;
   private array $queryParams;
+  private array $vars = [];
 
   public function __construct(Router $router)
   {
@@ -44,5 +45,15 @@ class Request
   public function getQueryParams(): array
   {
     return $this->queryParams;
+  }
+
+  public function setVars(array $vars): void
+  {
+    $this->vars = $vars;
+  }
+
+  public function getVars(): array
+  {
+    return $this->vars;
   }
 }

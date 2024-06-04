@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\Controller;
+use App\Http\Request;
 
 class Dashboard extends Controller
 {
@@ -11,28 +12,13 @@ class Dashboard extends Controller
     parent::__construct('Admin');
   }
 
-  public function orders(): mixed
+  public function session(Request $request)
   {
-    return $this->view('orders');
-  }
+    $session = $request->getVars()['session'] ?? 'orders';
+    $active = $session;
 
-  public function products(): mixed
-  {
-    return $this->view('products');
-  }
-
-  public function finalizedOrders(): mixed
-  {
-    return $this->view('finalized-orders');
-  }
-
-  public function users(): mixed
-  {
-    return $this->view('users');
-  }
-
-  public function administrators(): mixed
-  {
-    return $this->view('administrators');
+    return $this->view($session, [
+      'active' => $active
+    ]);
   }
 }

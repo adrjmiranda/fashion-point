@@ -45,23 +45,25 @@
 
       <ul>
         <li>
-          <a href="/admin/dashboard/orders" class="active">Orders</a>
+          <a href="/admin/dashboard/orders" class="<?= $active === 'orders' ? 'active' : '' ?>">Orders</a>
         </li>
 
         <li>
-          <a href="/admin/dashboard/products">Products</a>
+          <a href="/admin/dashboard/products" class="<?= $active === 'products' ? 'active' : '' ?>">Products</a>
         </li>
 
         <li>
-          <a href="/admin/dashboard/finalized-orders">Finalized orders</a>
+          <a href="/admin/dashboard/finalized-orders"
+            class="<?= $active === 'finalized-orders' ? 'active' : '' ?>">Finalized orders</a>
         </li>
 
         <li>
-          <a href="/admin/dashboard/users">Users</a>
+          <a href="/admin/dashboard/users" class="<?= $active === 'users' ? 'active' : '' ?>">Users</a>
         </li>
 
         <li>
-          <a href="/admin/dashboard/administrators">Administrators</a>
+          <a href="/admin/dashboard/administrators"
+            class="<?= $active === 'administrators' ? 'active' : '' ?>">Administrators</a>
         </li>
       </ul>
 

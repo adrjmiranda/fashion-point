@@ -1,6 +1,6 @@
 <?php
 
-// Login and Logout
+// // Login and Logout
 $router->get(
   '/admin/login',
   'App\\Controllers\\Admin\\Auth@index',
@@ -20,32 +20,9 @@ $router->get(
 );
 
 // Dashboard
-$router->get(
-  '/admin/dashboard/orders',
-  'App\\Controllers\\Admin\\Dashboard@orders',
-  ['App\\Middlewares\\RequireLogin']
-);
 
 $router->get(
-  '/admin/dashboard/products',
-  'App\\Controllers\\Admin\\Dashboard@products',
-  ['App\\Middlewares\\RequireLogin']
-);
-
-$router->get(
-  '/admin/dashboard/finalized-orders',
-  'App\\Controllers\\Admin\\Dashboard@finalizedOrders',
-  ['App\\Middlewares\\RequireLogin']
-);
-
-$router->get(
-  '/admin/dashboard/users',
-  'App\\Controllers\\Admin\\Dashboard@users',
-  ['App\\Middlewares\\RequireLogin']
-);
-
-$router->get(
-  '/admin/dashboard/administrators',
-  'App\\Controllers\\Admin\\Dashboard@administrators',
+  '/admin/dashboard/[session: %s]',
+  'App\\Controllers\\Admin\\Dashboard@session',
   ['App\\Middlewares\\RequireLogin']
 );
