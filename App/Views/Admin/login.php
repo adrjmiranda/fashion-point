@@ -3,7 +3,16 @@
  * @var App\Utils\View $this
  */
 
-$this->extend('auth', ['title' => 'Fashion Point']);
+$this->extend('dashboard', [
+  'title' => 'Login',
+  'styles' => [
+    'global',
+    'admin-dashboard'
+  ],
+  'scripts' => [
+    'pass-visibility-login'
+  ]
+]);
 ?>
 
 <div id="auth">

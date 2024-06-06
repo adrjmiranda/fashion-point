@@ -3,7 +3,16 @@
  * @var App\Utils\View $this
  */
 
-$this->extend('dashboard', ['title' => 'Fashion Point']);
+$this->extend('dashboard', [
+  'title' => 'Finalized Orders',
+  'styles' => [
+    'global',
+    'admin-dashboard'
+  ],
+  'scripts' => [
+    'session-menu-visibility'
+  ]
+]);
 ?>
 
 <div id="content-area">
@@ -39,7 +48,7 @@ $this->extend('dashboard', ['title' => 'Fashion Point']);
             <input type="search" name="query" id="query" placeholder="Looking for what?" />
           </div>
           <button type="submit">
-            <img src="img/search.svg" alt="search" />
+            <img src="<?= $baseUrl ?>/img/search.svg" alt="search" />
           </button>
         </form>
       </div>

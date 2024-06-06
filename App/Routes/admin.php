@@ -26,3 +26,15 @@ $router->get(
   'App\\Controllers\\Admin\\Dashboard@session',
   ['App\\Middlewares\\RequireLogin']
 );
+
+$router->get(
+  '/admin/create-product',
+  'App\\Controllers\\Admin\\Product@productForm',
+  ['App\\Middlewares\\RequireLogin']
+);
+
+$router->post(
+  '/admin/create-product',
+  'App\\Controllers\\Admin\\Product@createProduct',
+  ['App\\Middlewares\\RequireLogin']
+);

@@ -3,7 +3,16 @@
  * @var App\Utils\View $this
  */
 
-$this->extend('dashboard', ['title' => 'Fashion Point']);
+$this->extend('dashboard', [
+  'title' => 'Users',
+  'styles' => [
+    'global',
+    'admin-dashboard'
+  ],
+  'scripts' => [
+    'session-menu-visibility'
+  ]
+]);
 ?>
 
 <div id="content-area">

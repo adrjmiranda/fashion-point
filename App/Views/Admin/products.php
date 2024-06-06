@@ -3,7 +3,16 @@
  * @var App\Utils\View $this
  */
 
-$this->extend('dashboard', ['title' => 'Fashion Point']);
+$this->extend('dashboard', [
+  'title' => 'Products',
+  'styles' => [
+    'global',
+    'admin-dashboard'
+  ],
+  'scripts' => [
+    'session-menu-visibility'
+  ]
+]);
 ?>
 
 <div id="content-area">
@@ -19,7 +28,7 @@ $this->extend('dashboard', ['title' => 'Fashion Point']);
       </div>
 
       <div class="header-bottom">
-        <a href="#" class="btn special">Add product</a>
+        <a href="<?= $baseUrl ?>/admin/create-product" class="btn special">Add product</a>
 
         <div class="options">
           <form action="#" id="filter">

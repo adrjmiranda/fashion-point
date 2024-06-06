@@ -166,7 +166,7 @@ class Router
     $this->addRoute('POST', $uriContent, $controller, $method, $middlewareList);
   }
 
-  private function validateRequestUri(string $requestHttpMethod, string $requestUri)
+  private function validateRequestUri(string $requestHttpMethod, string $requestUri): ?bool
   {
     $uriList = array_keys(self::$routes[$requestHttpMethod]);
     $pathParts = [];
@@ -251,7 +251,7 @@ class Router
     }
   }
 
-  public function redirect(string $uri)
+  public function redirect(string $uri): never
   {
     $url = self::$baseUrl . $uri;
     header('location: ' . $url);

@@ -15,10 +15,16 @@
   <title><?= $title ?></title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="<?= $baseUrl ?>/css/master.css" />
+
+  <?php foreach ($styles as $file): ?>
+    <link rel="stylesheet" href="<?= $baseUrl ?>/css/<?= $file ?>.css" />
+  <?php endforeach; ?>
 
   <!-- Scripts -->
-  <script src="<?= $baseUrl ?>/js/pass-visibility-login.js" defer></script>
+
+  <?php foreach ($scripts as $file): ?>
+    <script src="<?= $baseUrl ?>/js/<?= $file ?>.js" defer></script>
+  <?php endforeach; ?>
 
   <!-- Fonts -->
 

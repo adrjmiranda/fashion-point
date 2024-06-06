@@ -16,13 +16,15 @@
 
   <!-- Styles -->
 
-  <link rel="stylesheet" href="<?= $baseUrl ?>/css/master.css" />
+  <?php foreach ($styles as $file): ?>
+    <link rel="stylesheet" href="<?= $baseUrl ?>/css/<?= $file ?>.css" />
+  <?php endforeach; ?>
 
   <!-- Scripts -->
 
-  <script src="<?= $baseUrl ?>/js/cart-visibility.js" defer></script>
-  <script src="<?= $baseUrl ?>/js/mobile-menu-visibility.js" defer></script>
-  <script src="<?= $baseUrl ?>/js/session-menu-visibility.js" defer></script>
+  <?php foreach ($scripts as $file): ?>
+    <script src="<?= $baseUrl ?>/js/<?= $file ?>.js" defer></script>
+  <?php endforeach; ?>
 
   <!-- Fonts -->
 
@@ -37,7 +39,7 @@
     <!-- Tabs -->
 
     <div id="tabs">
-      <a href="#" class="logo">
+      <a href="<?= $baseUrl ?>/admin/dashboard/orders" class="logo">
         <span>Fashion point</span>
       </a>
 

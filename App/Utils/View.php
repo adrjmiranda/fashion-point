@@ -29,11 +29,12 @@ class View
     $file = realpath($baseDir . '/' . $view . '.php');
 
     if ($file === false || strpos($file, $baseDir) !== 0) {
-      throw new Exception("Template $view not found or access denied.");
+      $template = explode('/', $view)[1];
+      throw new Exception("Path /$template not found or access denied", 404);
     }
 
     if (!file_exists($file)) {
-      throw new Exception("Template $file not found.");
+      throw new Exception("Template $file not found", 404);
     }
 
     return $file;
