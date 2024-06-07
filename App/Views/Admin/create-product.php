@@ -12,7 +12,8 @@ $this->extend('dashboard', [
   'scripts' => [
     'session-menu-visibility',
     'change-preview-image',
-    'img-preview'
+    'img-preview',
+    'choose-color'
   ]
 ]);
 ?>
@@ -41,21 +42,36 @@ $this->extend('dashboard', [
         <div class="field">
           <label for="name">Name:</label>
           <input type="text" name="name" id="name" placeholder="Product name" />
+
+          <p class="form-field-error"><?= $errors['name'] ?? '' ?></p>
         </div>
 
         <div class="field">
           <label for="description">Description:</label>
           <textarea name="description" id="description" placeholder="Describe this product"></textarea>
+
+          <p class="form-field-error"><?= $errors['description'] ?? '' ?></p>
         </div>
 
         <div class="field">
           <label for="images">Images (max: 4):</label>
           <input type="file" name="images[]" id="images" multiple />
+
+          <p class="form-field-error"><?= $errors['images'] ?? '' ?></p>
         </div>
 
         <div class="field">
-          <label for="stock">Stock</label>
+          <label for="price">Price:</label>
+          <input type="text" name="price" id="price" value="0.00" />
+
+          <p class="form-field-error"><?= $errors['price'] ?? '' ?></p>
+        </div>
+
+        <div class="field">
+          <label for="stock">Stock:</label>
           <input type="number" name="stock" id="stock" min="1" value="1" />
+
+          <p class="form-field-error"><?= $errors['stock'] ?? '' ?></p>
         </div>
 
         <div class="field">
@@ -67,6 +83,8 @@ $this->extend('dashboard', [
             <label>G<input type="checkbox" name="sizes[]" checked value="G" /></label>
             <label>GG<input type="checkbox" name="sizes[]" checked value="GG" /></label>
           </div>
+
+          <p class="form-field-error"><?= $errors['sizes'] ?? '' ?></p>
         </div>
 
         <div class="field">
@@ -79,6 +97,8 @@ $this->extend('dashboard', [
           </div>
 
           <ul class="check" id="colors"></ul>
+
+          <p class="form-field-error"><?= $errors['colors'] ?? '' ?></p>
         </div>
 
         <button type="submit" class="btn special">Create</button>

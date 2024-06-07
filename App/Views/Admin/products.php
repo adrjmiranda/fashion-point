@@ -71,21 +71,23 @@ $this->extend('dashboard', [
         </thead>
 
         <tbody>
-          <tr>
-            <td class="hide-id">1</td>
-            <td>Product name</td>
-            <td><span>3</span> un</td>
-            <td class="hide-price">$ <span>42.99</span></td>
-            <td class="hide-date"><span>3</span> un</td>
-            <td>
-              <a href="#">
-                <img src="<?= $baseUrl ?>/img/document.svg" alt="edit" />
-              </a>
-              <a href="#">
-                <img src="<?= $baseUrl ?>/img/trash.svg" alt="remove" />
-              </a>
-            </td>
-          </tr>
+          <?php foreach ($products as $product): ?>
+            <tr>
+              <td class="hide-id"><?= $product->id ?></td>
+              <td><?= $product->name ?></td>
+              <td><span>3</span> un</td>
+              <td class="hide-price">$ <span><?= $product->price ?></span></td>
+              <td class="hide-date"><span><?= $product->stock ?></span> un</td>
+              <td>
+                <a href="#">
+                  <img src="<?= $baseUrl ?>/img/document.svg" alt="edit" />
+                </a>
+                <a href="#">
+                  <img src="<?= $baseUrl ?>/img/trash.svg" alt="remove" />
+                </a>
+              </td>
+            </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>

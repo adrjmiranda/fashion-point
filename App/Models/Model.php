@@ -25,7 +25,7 @@ class Model
     exit;
   }
 
-  protected function all(int $limit = 0): ?array
+  public function all(int $limit = 0): ?array
   {
     try {
       $query = "SELECT * FROM $this->table";
@@ -64,6 +64,49 @@ class Model
     } catch (PDOException $pDOException) {
       $this->handleException($pDOException->getMessage(), $pDOException->getCode());
       return null;
+    }
+  }
+
+  public function store()
+  {
+    try {
+      $query = "INSERT INTO $this->table (";
+
+      $data = [];
+      $fields = (array) $this;
+
+      foreach ($fields as $key => $value) {
+        if ($key != 'id' && !empty($value) && isset($value)) {
+          if (strstr($key, 'App\Models\Model')) {
+            continue;
+          }
+          $data[$key] = $value;
+        }
+      }
+
+      $dataKeys = array_keys($data);
+
+      foreach ($dataKeys as $value) {
+        $query .= $value . ', ';
+      }
+      $query = substr($query, 0, -2);
+      $query .= ') VALUES (';
+
+      foreach ($dataKeys as $value) {
+        $query .= ':' . $value . ', ';
+      }
+      $query = substr($query, 0, -2);
+      $query .= ')';
+
+      $stmt = $this->pdo->prepare($query);
+
+      foreach ($data as $key => $value) {
+        $stmt->bindValue(":$key", $value);
+      }
+
+      return $stmt->execute();
+    } catch (PDOException $pDOException) {
+      $this->handleException($pDOException->getMessage(), $pDOException->getCode());
     }
   }
 }

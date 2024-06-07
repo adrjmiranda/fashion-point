@@ -3,11 +3,11 @@
  * @var App\Utils\View $this
  */
 
-$this->extend('dashboard', [
+$this->extend('auth', [
   'title' => 'Login',
   'styles' => [
     'global',
-    'admin-dashboard'
+    'auth'
   ],
   'scripts' => [
     'pass-visibility-login'

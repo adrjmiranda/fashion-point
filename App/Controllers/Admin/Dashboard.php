@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\Controller;
 use App\Http\Request;
+use App\Models\Product as ProductModel;
 
 class Dashboard extends Controller
 {
@@ -17,8 +18,17 @@ class Dashboard extends Controller
     $session = $request->getVars()['session'] ?? 'orders';
     $active = $session;
 
-    return $this->view($session, [
+    $data = [
       'active' => $active
-    ]);
+    ];
+
+    if ($session === 'products') {
+      $product = new ProductModel;
+
+      $products = $product->all();
+      $data['products'] = $products;
+    }
+
+    return $this->view($session, $data);
   }
 }
